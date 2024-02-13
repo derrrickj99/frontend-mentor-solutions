@@ -1,19 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: hsl(0, 36%, 70%);
+  --secondary-color: hsl(0, 93%, 68%);
+  --accent-color: black;
+  --background-gradient: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
+  --button-gradient: linear-gradient(
+    135deg,
+    hsl(0, 80%, 86%),
+    hsl(0, 74%, 74%)
+  );
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Josefin Sans', sans-serif;
-    box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  background: var(--background-gradient);
+  height: 100vh;
+  max-width: 1300px;
+  margin: auto;
+}
+
+h1,
+p,
+input {
+  color: var(--primary-color);
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 header {
-    width: 100%;
+  width: 100%;
 }
 
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+body > img {
+  float: right;
+  height: 100%;
+}
+.container {
+  float: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .logo {
-    padding: 10px 0 10px 10px;
+  padding: 20px 0 20px 20px;
 }
 
 .logo img {
-    width: 140px;
-    height: 30px;
+  height: 26px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+.img {
+  position: relative;
+  right: 0;
+}
+.main {
+  display: grid;
+  height: 100%;
+  width: 300px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.main p {
+  margin: 20px 0;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.email {
+  height: 50px;
+  border: 1px solid var(--primary-color);
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.email input {
+  padding: 20px;
+}
+
+.email button {
+  width: 60px;
+  background: var(--button-gradient);
+  border: 1px solid transparent;
+  border-radius: 25px;
+}
+
+/* mobile view */
+@media screen and (max-width: 375px) {
+  body > img {
+    display: none;
+  }
+}
+
+/*desktop view */
+@media screen and (min-width: 1300px) {
+  .img {
+    display: none;
+  }
 }
